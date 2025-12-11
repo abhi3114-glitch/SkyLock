@@ -1,0 +1,23 @@
+cluster:
+  node_id: "node-2"
+  peers:
+    - "localhost:5001"
+    - "localhost:5003"
+
+server:
+  grpc_port: 5002
+  http_port: 8082
+
+raft:
+  election_timeout_min: 150ms
+  election_timeout_max: 300ms
+  heartbeat_interval: 50ms
+
+session:
+  default_ttl: 10s
+  max_ttl: 60s
+
+storage:
+  data_dir: "./data/node2"
+  wal_enabled: false
+  snapshot_interval: 5m
